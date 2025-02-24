@@ -23,10 +23,9 @@ export const Home = ({ setGameStarted }) => {
           style={{ minHeight: "100vh" }}>
           <Col xs={12} md={8} lg={6}>
             <div className='record'>
-              {recorde}% <br />
+              {recorde}%
               <span className='record-label'>Recorde</span>{" "}
             </div>
-
             <div className='home-box text-center'>
               <img
                 src={logo}
