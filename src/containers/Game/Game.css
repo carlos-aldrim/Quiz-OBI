@@ -1,0 +1,140 @@
+section.game.background {
+  background: #00a1ff;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+section.game.background .timer-pergunta {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid #f9c05d;
+  color: #f9c05d;
+  font-size: 2.5rem;
+  padding: 0.3rem 2rem;
+  z-index: 1000;
+  font-weight: 700;
+}
+
+section.game .game-control {
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.game .game-control .contador-perguntas p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+section.game .game-control .pergunta,
+section.game .game-control .alternativa {
+  background: #F9C05D;
+  border: 2px solid #F9C05D;
+  border-radius: 50px;
+  padding: 1.2rem;
+  color: #111;
+}
+
+section.game .game-control .pergunta {
+  font-size: 1.5rem;
+  max-width: 90%;
+  margin: 1.5rem auto 2rem auto;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+section.game .game-control .pergunta p {
+  font-weight: 700;
+}
+
+section.game .game-control .alternativa {
+  position: relative;
+  font-size: 1.2rem;
+  max-width: 90%;
+  margin: 1rem auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+section.game .game-control .alternativa:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+section.game .game-control .alternativa.certa.highlight {
+  background: #46fc22;
+}
+
+section.game .game-control .alternativa span.numero-alternativa {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-weight: 700;
+  border: 2px solid #111;
+  font-size: 1.5rem;
+}
+
+section.game .game-control .opcoes {
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+section.game .game-control .opcoes .opcao {
+  margin: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #e1e1e1;
+  border-radius: 50px;
+  background-color: #e1e1e1;
+  color: #111;
+  padding: 0.4rem 1.5rem;
+  font-size: 1.2rem;
+  transition: background-color 0.2s;
+}
+
+section.game .game-control .opcoes .opcao:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+section.game .game-control .projecoes {
+  max-width: 180px;
+  margin: 1rem auto;
+  font-weight: 700;
+}
+
+section.game .game-control .projecoes .valor {
+  border-radius: 8px;
+  background-color: #F9C05D;
+  color: #111;
+  padding: 0.3rem 0.8rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+section.game .game-control .projecoes .opcao {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+section.game .game-control .projecoes .opcao:hover {
+  opacity: 0.8;
+}
