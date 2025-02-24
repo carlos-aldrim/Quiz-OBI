@@ -40,9 +40,9 @@ export const Game = ({ setGameStarted }) => {
 
   const dividePerguntas = () => {
     const perguntas = [...bancoPerguntas];
-    setPerguntasFaceis(perguntas.splice(0, 100));
-    setPerguntasMedias(perguntas.splice(0, 100));
-    setPerguntasDificeis(perguntas.splice(0, 100));
+    setPerguntasFaceis(perguntas.splice(0, 60));
+    setPerguntasMedias(perguntas.splice(0, 40));
+    setPerguntasDificeis(perguntas.splice(0, 20));
   };
 
   const getPerguntaAleatoria = (nivelAtual) => {
@@ -110,6 +110,7 @@ export const Game = ({ setGameStarted }) => {
 
   const passaNivel = () => {
     if (currentNivel === 15) {
+      setCurrentNivel(16);
       setShowModal(true);
       setGameWon(true);
       confetti({ particleCount: 200 });
@@ -146,15 +147,15 @@ export const Game = ({ setGameStarted }) => {
   };
 
   const finalizarJogo = () => {
-    const progressoAtual = recompensaPorNivel[currentNivel] || 0;
-
+    const progressoAtual = gameWon ? 100 : (recompensaPorNivel[currentNivel] || 0);
+    
     if (progressoAtual > recorde) {
       localStorage.setItem("recordeQuiz", progressoAtual.toString());
       setRecorde(progressoAtual);
     }
-
+    
     setGameStarted(false);
-  };
+  };  
 
   return (
     <section className='game background'>
