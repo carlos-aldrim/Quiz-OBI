@@ -30,10 +30,15 @@ export const Game = ({ setCurrentScreen }) => {
   const [blink, setBlink] = useState(false);
 
   const dividePerguntas = (bancoPerguntas) => {
-    const perguntas = [...bancoPerguntas];
-    setPerguntasFaceis(perguntas.splice(0, 60));
-    setPerguntasMedias(perguntas.splice(0, 40));
-    setPerguntasDificeis(perguntas.splice(0, 20));
+    setPerguntasFaceis(
+      bancoPerguntas.filter((pergunta) => pergunta.dificuldade === "Fácil")
+    );
+    setPerguntasMedias(
+      bancoPerguntas.filter((pergunta) => pergunta.dificuldade === "Média")
+    );
+    setPerguntasDificeis(
+      bancoPerguntas.filter((pergunta) => pergunta.dificuldade === "Difícil")
+    );
   };
 
   const getPerguntaAleatoria = (nivelAtual) => {
@@ -140,7 +145,6 @@ export const Game = ({ setCurrentScreen }) => {
       getPerguntaAleatoria(currentNivel + 1);
       iniciaTimerPergunta();
     }
-    // Limpa a resposta selecionada após passar de nível
     setSelectedAnswer(null);
     setIsAnswerCorrect(null);
   };
@@ -196,16 +200,19 @@ export const Game = ({ setCurrentScreen }) => {
             : ""
         }
         show={showModal}
-        setShow={setShowModal}
-      >
+        setShow={setShowModal}>
         <p>
           {counterPergunta === 0 &&
             `Infelizmente, o tempo acabou. A resposta correta era "${
-              currentPergunta.alternativas[parseInt(currentPergunta.resposta) - 1]
+              currentPergunta.alternativas[
+                parseInt(currentPergunta.resposta) - 1
+              ]
             }".`}
           {gameOver &&
             `Resposta incorreta. A resposta correta era "${
-              currentPergunta.alternativas[parseInt(currentPergunta.resposta) - 1]
+              currentPergunta.alternativas[
+                parseInt(currentPergunta.resposta) - 1
+              ]
             }".`}
           {gameWon && (
             <Fragment>
@@ -218,8 +225,8 @@ export const Game = ({ setCurrentScreen }) => {
             Você completou{" "}
             <strong>{`${recompensas[currentNivel].toString()}%`}</strong> do
             quiz. Refaça o teste para aprimorar seu desempenho. Recomendamos que
-            você estude o tópico "{currentPergunta.competencia}" para se preparar
-            melhor.
+            você estude o tópico "{currentPergunta.competencia}" para se
+            preparar melhor.
           </p>
         )}
 
@@ -270,8 +277,7 @@ export const Game = ({ setCurrentScreen }) => {
                             selectedAnswer === i + 1 &&
                             !isAnswerCorrect,
                         })}
-                        key={i}
-                      >
+                        key={i}>
                         <span className='numero-alternativa'>{i + 1}</span>
                         {alternativa}
                       </div>
@@ -307,8 +313,7 @@ export const Game = ({ setCurrentScreen }) => {
                               )
                             )
                               setCurrentScreen("home");
-                          }}
-                        >
+                          }}>
                           Encerrar Jogo
                         </p>
                       </div>

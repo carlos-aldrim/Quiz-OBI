@@ -1097,5 +1097,921 @@
     "dificuldade": "Difícil",
     "resposta": "2",
     "competencia": "Análise de Algoritmos"
+  },
+  {
+    "pergunta": "Qual é a principal vantagem da busca em largura (BFS) sobre a busca em profundidade (DFS) em um grafo?",
+    "alternativas": [
+      "BFS consome menos memória que DFS",
+      "BFS encontra o caminho mais curto em um grafo não ponderado",
+      "DFS encontra sempre o caminho ótimo",
+      "BFS pode ser implementado recursivamente"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – BFS e DFS"
+  },
+  {
+    "pergunta": "Dado um problema de programação dinâmica com subproblemas sobrepostos e ótima subestrutura, qual técnica pode ser usada para melhorar a eficiência?",
+    "alternativas": [
+      "Força bruta",
+      "Memorização (memoization)",
+      "Divisão e conquista",
+      "Heurísticas"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Programação Dinâmica – Otimização"
+  },
+  {
+    "pergunta": "Qual é o princípio básico do algoritmo de Dijkstra para encontrar o caminho mínimo?",
+    "alternativas": [
+      "Exploração em profundidade do grafo",
+      "Uso de programação dinâmica para armazenar caminhos",
+      "Uso de uma fila de prioridade para sempre expandir o nó com menor custo acumulado",
+      "Marcação aleatória de caminhos até encontrar o menor"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Teoria dos Grafos – Algoritmo de Dijkstra"
+  },
+  {
+    "pergunta": "Qual estrutura de dados segue o modelo FIFO?",
+    "alternativas": ["Pilha", "Fila", "Árvore", "Grafo"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Estruturas de Dados – Fila"
+  },
+  {
+    "pergunta": "Qual é a saída do código: print(2+3*4) em Python?",
+    "alternativas": ["14", "20", "24", "12"],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Programação – Prioridade de Operações"
+  },
+  {
+    "pergunta": "Qual a principal característica de um loop for?",
+    "alternativas": [
+      "Repete um bloco de código enquanto uma condição é verdadeira",
+      "Itera sobre elementos de uma coleção",
+      "Executa um bloco de código pelo menos uma vez",
+      "É sempre infinito"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Lógica de Programação – Estruturas de Repetição"
+  },
+  {
+    "pergunta": "Qual comando em Python é usado para saída de dados?",
+    "alternativas": ["input()", "print()", "output()", "echo()"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Entrada e Saída"
+  },
+  {
+    "pergunta": "Qual é o valor lógico de 'True' em Python?",
+    "alternativas": ["0", "1", "True", "False"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Lógica de Programação – Booleanos"
+  },
+  {
+    "pergunta": "Em qual situação se utiliza a estrutura condicional 'if'?",
+    "alternativas": [
+      "Quando há necessidade de repetição",
+      "Para tomada de decisão",
+      "Para armazenamento de dados",
+      "Para manipulação de arquivos"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Lógica de Programação – Condicionais"
+  },
+  {
+    "pergunta": "Qual é o resultado de 3 elevado a 2?",
+    "alternativas": ["5", "6", "9", "8"],
+    "dificuldade": "Fácil",
+    "resposta": "3",
+    "competencia": "Matemática Computacional – Potenciação"
+  },
+  {
+    "pergunta": "Qual é a função da variável em um programa?",
+    "alternativas": [
+      "Armazenar dados temporariamente",
+      "Realizar cálculos matemáticos",
+      "Controlar o fluxo do programa",
+      "Gerenciar a memória do computador"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Programação – Variáveis"
+  },
+  {
+    "pergunta": "Qual é o símbolo de atribuição em muitas linguagens de programação?",
+    "alternativas": ["==", "=", "<-", ":="],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Atribuição"
+  },
+  {
+    "pergunta": "Qual estrutura é comumente usada para armazenar uma sequência de elementos em Python?",
+    "alternativas": ["dicionário", "lista", "tupla", "conjunto"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Estruturas de Dados – Listas"
+  },
+  {
+    "pergunta": "Qual método é utilizado para adicionar um elemento ao final de uma lista em Python?",
+    "alternativas": ["add()", "append()", "insert()", "extend()"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Métodos de Lista"
+  },
+  {
+    "pergunta": "Em um vetor ordenado, qual método de busca é mais eficiente?",
+    "alternativas": [
+      "Busca linear",
+      "Busca binária",
+      "Busca recursiva",
+      "Busca em profundidade"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Busca Binária"
+  },
+  {
+    "pergunta": "Qual é o comando para ler a entrada do usuário em Python?",
+    "alternativas": ["read()", "input()", "scan()", "get()"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Entrada de Dados"
+  },
+  {
+    "pergunta": "O que representa a sigla 'IDE' em programação?",
+    "alternativas": [
+      "Integrated Development Environment",
+      "Integrated Data Environment",
+      "Internet Development Engine",
+      "Interface Design Environment"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Ferramentas de Programação – IDE"
+  },
+  {
+    "pergunta": "Qual operador é usado para comparação de igualdade em Python?",
+    "alternativas": ["=", "==", "!=", "==="],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Operadores"
+  },
+  {
+    "pergunta": "O que significa 'bug' em um programa?",
+    "alternativas": [
+      "Um tipo de variável",
+      "Um erro ou falha",
+      "Uma função específica",
+      "Um componente do hardware"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Depuração"
+  },
+  {
+    "pergunta": "Qual das opções é uma linguagem de programação?",
+    "alternativas": ["HTML", "CSS", "Python", "SQL"],
+    "dificuldade": "Fácil",
+    "resposta": "3",
+    "competencia": "Programação – Linguagens"
+  },
+  {
+    "pergunta": "Em qual estrutura de controle se utiliza 'while'?",
+    "alternativas": ["Repetição", "Condicional", "Função", "Classe"],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Lógica de Programação – Loops"
+  },
+  {
+    "pergunta": "Qual dos seguintes não é um tipo primitivo em muitas linguagens?",
+    "alternativas": ["Inteiro", "Caractere", "Booleano", "Lista"],
+    "dificuldade": "Fácil",
+    "resposta": "4",
+    "competencia": "Programação – Tipos de Dados"
+  },
+  {
+    "pergunta": "Qual é a saída do seguinte código Python: print(len('OBI'))?",
+    "alternativas": ["2", "3", "OBI", "Erro"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Funções de String"
+  },
+  {
+    "pergunta": "Qual estrutura de dados é ideal para acesso rápido por chave?",
+    "alternativas": ["Lista", "Fila", "Dicionário", "Conjunto"],
+    "dificuldade": "Fácil",
+    "resposta": "3",
+    "competencia": "Estruturas de Dados – Dicionários"
+  },
+  {
+    "pergunta": "Qual é a função do 'return' em uma função?",
+    "alternativas": [
+      "Finalizar a função",
+      "Imprimir o resultado",
+      "Retornar um valor",
+      "Chamar outra função"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "3",
+    "competencia": "Programação – Funções"
+  },
+  {
+    "pergunta": "O que é um algoritmo?",
+    "alternativas": [
+      "Um tipo de software",
+      "Um conjunto de instruções para resolver um problema",
+      "Um hardware específico",
+      "Um formato de dados"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Algoritmos – Conceitos Básicos"
+  },
+  {
+    "pergunta": "Qual é o objetivo da análise de algoritmos?",
+    "alternativas": [
+      "Melhorar a estética do código",
+      "Determinar o desempenho e eficiência de um algoritmo",
+      "Converter código em linguagem de máquina",
+      "Compilar o código-fonte"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Conceitos Básicos"
+  },
+  {
+    "pergunta": "Qual é a saída do seguinte código: print(10 % 3)?",
+    "alternativas": ["1", "3", "0", "2"],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Programação – Operadores Aritméticos"
+  },
+  {
+    "pergunta": "Qual método de ordenação é considerado estável?",
+    "alternativas": ["QuickSort", "MergeSort", "HeapSort", "SelectionSort"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Ordenação"
+  },
+  {
+    "pergunta": "Qual é o propósito do laço 'for'?",
+    "alternativas": [
+      "Realizar operações aritméticas",
+      "Iterar sobre elementos de uma coleção",
+      "Verificar condições lógicas",
+      "Criar funções"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Lógica de Programação – Estruturas de Repetição"
+  },
+  {
+    "pergunta": "Em programação, o que significa 'debug'?",
+    "alternativas": [
+      "Adicionar novos recursos",
+      "Corrigir erros",
+      "Compilar o código",
+      "Otimizar o desempenho"
+    ],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Depuração"
+  },
+  {
+    "pergunta": "Qual é o resultado da expressão: 2 + 3 * 4 - 5?",
+    "alternativas": ["9", "13", "11", "12"],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Matemática Computacional – Operações Aritméticas"
+  },
+  {
+    "pergunta": "Qual é o operador utilizado para exponenciação em Python?",
+    "alternativas": ["^", "**", "exp()", "sqrt()"],
+    "dificuldade": "Fácil",
+    "resposta": "2",
+    "competencia": "Programação – Operadores Aritméticos"
+  },
+  {
+    "pergunta": "Em Python, qual a função para converter uma string em inteiro?",
+    "alternativas": ["int()", "str()", "float()", "bool()"],
+    "dificuldade": "Fácil",
+    "resposta": "1",
+    "competencia": "Programação – Conversão de Tipos"
+  },
+  {
+    "pergunta": "Qual comando é usado para definir uma função em Python?",
+    "alternativas": ["func", "function", "def", "define"],
+    "dificuldade": "Fácil",
+    "resposta": "3",
+    "competencia": "Programação – Declaração de Funções"
+  },
+  {
+    "pergunta": "Qual estrutura é utilizada para armazenar pares chave-valor em Python?",
+    "alternativas": ["Lista", "Tupla", "Dicionário", "Conjunto"],
+    "dificuldade": "Fácil",
+    "resposta": "3",
+    "competencia": "Estruturas de Dados – Dicionários"
+  },
+  {
+    "pergunta": "Qual é a complexidade média do algoritmo MergeSort no pior caso?",
+    "alternativas": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – MergeSort"
+  },
+  {
+    "pergunta": "Qual algoritmo de ordenação utiliza a estratégia 'dividir para conquistar' e possui complexidade O(n log n) na média?",
+    "alternativas": ["BubbleSort", "MergeSort", "InsertionSort", "SelectionSort"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Ordenação"
+  },
+  {
+    "pergunta": "Em programação dinâmica, qual técnica é usada para evitar cálculos redundantes?",
+    "alternativas": ["Recursão", "Memorização", "Backtracking", "Força bruta"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Programação Dinâmica – Otimização"
+  },
+  {
+    "pergunta": "Qual estrutura de dados é mais adequada para implementar uma fila de prioridade?",
+    "alternativas": ["Pilha", "Árvore binária", "Heap", "Lista ligada"],
+    "dificuldade": "Média",
+    "resposta": "3",
+    "competencia": "Estruturas de Dados – Heap"
+  },
+  {
+    "pergunta": "Qual é a complexidade do algoritmo de busca linear em um vetor de n elementos?",
+    "alternativas": ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Busca Linear"
+  },
+  {
+    "pergunta": "Qual é o principal objetivo da técnica de backtracking?",
+    "alternativas": [
+      "Explorar todas as soluções possíveis",
+      "Otimizar o uso de memória",
+      "Melhorar a velocidade de execução",
+      "Evitar a recursão"
+    ],
+    "dificuldade": "Média",
+    "resposta": "1",
+    "competencia": "Algoritmos – Backtracking"
+  },
+  {
+    "pergunta": "Em um algoritmo de busca binária, o que acontece quando o elemento buscado é menor que o elemento do meio?",
+    "alternativas": [
+      "Procura na metade superior",
+      "Procura na metade inferior",
+      "Retorna o elemento",
+      "Continua a busca em ambos os lados"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Busca Binária"
+  },
+  {
+    "pergunta": "Qual é a característica principal de um grafo ponderado?",
+    "alternativas": [
+      "Cada aresta possui uma direção",
+      "Cada vértice possui um peso",
+      "Cada aresta possui um valor numérico",
+      "Não possui ciclos"
+    ],
+    "dificuldade": "Média",
+    "resposta": "3",
+    "competencia": "Teoria dos Grafos – Conceitos Básicos"
+  },
+  {
+    "pergunta": "Qual algoritmo é conhecido por encontrar a árvore geradora mínima em um grafo?",
+    "alternativas": ["Dijkstra", "Prim", "Floyd-Warshall", "Bellman-Ford"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Árvore Geradora Mínima"
+  },
+  {
+    "pergunta": "Em programação, o que significa 'recursão'?",
+    "alternativas": [
+      "Chamada de uma função por outra função",
+      "Chamada de uma função por ela mesma",
+      "Uso de laços de repetição",
+      "Implementação de algoritmos iterativos"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Recursão – Conceitos Básicos"
+  },
+  {
+    "pergunta": "Qual é o comportamento do algoritmo BubbleSort no melhor caso?",
+    "alternativas": ["O(n)", "O(n log n)", "O(n^2)", "O(1)"],
+    "dificuldade": "Média",
+    "resposta": "1",
+    "competencia": "Análise de Algoritmos – Ordenação"
+  },
+  {
+    "pergunta": "Em um problema de otimização, qual técnica geralmente é aplicada para reduzir o tempo de execução?",
+    "alternativas": ["Força bruta", "Programação dinâmica", "Algoritmos gulosos", "Busca exaustiva"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Programação Dinâmica – Otimização"
+  },
+  {
+    "pergunta": "Qual estrutura de dados permite acesso direto aos seus elementos através de um índice?",
+    "alternativas": ["Lista ligada", "Vetor", "Pilha", "Árvore"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Estruturas de Dados – Vetores"
+  },
+  {
+    "pergunta": "Qual é a principal característica de um algoritmo guloso?",
+    "alternativas": [
+      "Sempre encontra a solução ótima global",
+      "Faz escolhas locais com a esperança de encontrar uma solução ótima",
+      "Utiliza recursão intensivamente",
+      "Resolve todos os subproblemas"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Algoritmos – Estratégia Gulosa"
+  },
+  {
+    "pergunta": "Qual técnica é utilizada para percorrer todos os vértices de um grafo de forma ordenada?",
+    "alternativas": ["DFS", "BFS", "Backtracking", "Recursão"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – BFS"
+  },
+  {
+    "pergunta": "Qual é a vantagem da implementação recursiva sobre a iterativa em certos problemas?",
+    "alternativas": ["Maior eficiência", "Código mais simples e legível", "Menor uso de memória", "Evita stack overflow"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Recursão – Vantagens e Desvantagens"
+  },
+  {
+    "pergunta": "Qual é a saída do código: print('OBI'.lower())?",
+    "alternativas": ["obi", "OBI", "Obi", "oBI"],
+    "dificuldade": "Média",
+    "resposta": "1",
+    "competencia": "Programação – Manipulação de Strings"
+  },
+  {
+    "pergunta": "Em qual situação o uso de um dicionário é mais vantajoso?",
+    "alternativas": [
+      "Quando a ordem dos elementos é importante",
+      "Quando se precisa de acesso rápido por chave",
+      "Quando os elementos são apenas números",
+      "Quando se utiliza apenas iteração"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Estruturas de Dados – Dicionários"
+  },
+  {
+    "pergunta": "Qual é a complexidade do algoritmo MergeSort no pior caso?",
+    "alternativas": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – MergeSort"
+  },
+  {
+    "pergunta": "Qual estrutura é melhor para representar um grafo esparso?",
+    "alternativas": ["Matriz de adjacência", "Lista de adjacência", "Vetor", "Heap"],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Representação"
+  },
+  {
+    "pergunta": "Em um problema de busca, qual é a vantagem da busca binária sobre a busca linear?",
+    "alternativas": [
+      "Menor complexidade",
+      "Maior simplicidade de implementação",
+      "Menor uso de memória",
+      "Funciona em qualquer tipo de vetor"
+    ],
+    "dificuldade": "Média",
+    "resposta": "1",
+    "competencia": "Análise de Algoritmos – Busca Binária"
+  },
+  {
+    "pergunta": "Qual dos seguintes é um problema clássico resolvido com programação dinâmica?",
+    "alternativas": ["Problema da mochila", "Problema do caixeiro viajante", "Busca em profundidade", "Ordenação por seleção"],
+    "dificuldade": "Média",
+    "resposta": "1",
+    "competencia": "Programação Dinâmica – Problemas Clássicos"
+  },
+  {
+    "pergunta": "Qual é o objetivo do algoritmo de Floyd-Warshall?",
+    "alternativas": [
+      "Encontrar a árvore geradora mínima",
+      "Encontrar o caminho mínimo entre todos os pares de vértices",
+      "Ordenar um vetor",
+      "Calcular o número de componentes conexos"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Algoritmo de Floyd-Warshall"
+  },
+  {
+    "pergunta": "Em algoritmos gulosos, qual é o critério para selecionar a solução local?",
+    "alternativas": [
+      "Soma dos elementos",
+      "Critério de optimalidade local",
+      "Escolha aleatória",
+      "Divisão igualitária"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Algoritmos – Estratégia Gulosa"
+  },
+  {
+    "pergunta": "Qual é a principal função do algoritmo de Kruskal?",
+    "alternativas": [
+      "Ordenar um vetor",
+      "Encontrar a árvore geradora mínima",
+      "Buscar um elemento em uma lista",
+      "Calcular a média de números"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Árvore Geradora Mínima"
+  },
+  {
+    "pergunta": "Qual técnica é utilizada para resolver problemas de contagem em combinatória?",
+    "alternativas": ["Programação dinâmica", "Backtracking", "Análise combinatória", "Busca binária"],
+    "dificuldade": "Média",
+    "resposta": "3",
+    "competencia": "Matemática Computacional – Combinatória"
+  },
+  {
+    "pergunta": "Qual é a principal característica de um algoritmo recursivo?",
+    "alternativas": [
+      "Chama a si mesmo para resolver subproblemas",
+      "Utiliza apenas laços iterativos",
+      "Depende de estruturas de dados avançadas",
+      "Não pode ser otimizado"
+    ],
+    "dificuldade": "Média",
+    "resposta": "1",
+    "competencia": "Recursão – Conceitos Básicos"
+  },
+  {
+    "pergunta": "Em um vetor ordenado, qual é o melhor caso para a busca binária?",
+    "alternativas": ["Elemento no início", "Elemento no final", "Elemento no meio", "Elemento ausente"],
+    "dificuldade": "Média",
+    "resposta": "3",
+    "competencia": "Análise de Algoritmos – Busca Binária"
+  },
+  {
+    "pergunta": "Qual é a estratégia principal do algoritmo de ordenação HeapSort?",
+    "alternativas": [
+      "Dividir o vetor em partes iguais",
+      "Construir uma heap para extrair o maior elemento repetidamente",
+      "Utilizar recursão para ordenar subvetores",
+      "Fazer múltiplas passagens no vetor"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – HeapSort"
+  },
+  {
+    "pergunta": "Qual é o efeito do uso de 'pass' em Python dentro de uma função?",
+    "alternativas": [
+      "Termina a execução da função",
+      "Define um bloco vazio sem ação",
+      "Imprime uma mensagem",
+      "Interrompe o laço de repetição"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Programação – Estruturas de Controle"
+  },
+  {
+    "pergunta": "Em programação, o que é 'aliasing'?",
+    "alternativas": [
+      "Atribuição de um nome a uma função",
+      "Várias variáveis referenciando o mesmo objeto",
+      "Criação de cópias de dados",
+      "Utilização de bibliotecas externas"
+    ],
+    "dificuldade": "Média",
+    "resposta": "2",
+    "competencia": "Programação – Conceitos de Memória"
+  },
+  {
+    "pergunta": "Qual é a complexidade do algoritmo de multiplicação de matrizes ingênuo?",
+    "alternativas": ["O(n^2)", "O(n^3)", "O(n log n)", "O(n)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Multiplicação de Matrizes"
+  },
+  {
+    "pergunta": "Em programação dinâmica, qual é a diferença entre memoization e tabulation?",
+    "alternativas": [
+      "Memoization é iterativa, tabulation é recursiva",
+      "Memoization armazena resultados durante a recursão, tabulation utiliza uma tabela preenchida iterativamente",
+      "Ambas são idênticas",
+      "Tabulation é usada somente em grafos"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Programação Dinâmica – Técnicas"
+  },
+  {
+    "pergunta": "Qual problema clássico tem como solução a fórmula de Catalan?",
+    "alternativas": [
+      "Problema do caixeiro viajante",
+      "Número de árvores binárias",
+      "Problema da mochila",
+      "Caminho mínimo em grafos"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Matemática Computacional – Catalan"
+  },
+  {
+    "pergunta": "Qual é a abordagem principal para resolver o Problema da Subsequência Comum Máxima?",
+    "alternativas": [
+      "Algoritmo guloso",
+      "Programação dinâmica",
+      "Backtracking",
+      "Divisão e conquista"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Programação Dinâmica – Sequência Comum"
+  },
+  {
+    "pergunta": "Em um grafo, qual é a complexidade de encontrar todos os caminhos simples entre dois vértices?",
+    "alternativas": ["Exponencial", "Linear", "Polinomial", "Logarítmica"],
+    "dificuldade": "Difícil",
+    "resposta": "1",
+    "competencia": "Teoria dos Grafos – Caminhos Simples"
+  },
+  {
+    "pergunta": "Qual é o problema NP-completo clássico relacionado à coloração de grafos?",
+    "alternativas": [
+      "Problema do Clique",
+      "Problema da Soma de Subconjuntos",
+      "Coloração de Grafos",
+      "Problema da Partição"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Teoria dos Grafos – Problemas NP-completos"
+  },
+  {
+    "pergunta": "Qual técnica é utilizada para reduzir a complexidade de algoritmos recursivos através da eliminação de chamadas redundantes?",
+    "alternativas": [
+      "Divisão e conquista",
+      "Memorização",
+      "Heurística",
+      "Algoritmo guloso"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Recursão – Otimização"
+  },
+  {
+    "pergunta": "No contexto de estruturas de dados, o que caracteriza uma árvore AVL?",
+    "alternativas": [
+      "Árvore com balanceamento automático",
+      "Árvore não binária",
+      "Árvore sem folhas",
+      "Árvore com inserção apenas no fim"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "1",
+    "competencia": "Estruturas de Dados – Árvores Balanceadas"
+  },
+  {
+    "pergunta": "Qual é a complexidade de inserir um elemento em uma heap binária?",
+    "alternativas": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Estruturas de Dados – Heap"
+  },
+  {
+    "pergunta": "Qual é o tempo de execução do algoritmo de Dijkstra utilizando uma fila de prioridade implementada com heap?",
+    "alternativas": ["O(n)", "O(n log n)", "O(n^2)", "O(n + m)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Algoritmo de Dijkstra"
+  },
+  {
+    "pergunta": "Em algoritmos de ordenação, qual técnica é usada para evitar a pior complexidade do QuickSort?",
+    "alternativas": [
+      "Escolha aleatória do pivô",
+      "Dividir e conquistar",
+      "Uso de recursão",
+      "Algoritmo iterativo"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "1",
+    "competencia": "Análise de Algoritmos – QuickSort"
+  },
+  {
+    "pergunta": "Qual abordagem é geralmente utilizada para resolver problemas de caminhos mínimos em grafos com arestas de pesos negativos?",
+    "alternativas": ["Dijkstra", "Bellman-Ford", "Floyd-Warshall", "A*"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Caminho Mínimo"
+  },
+  {
+    "pergunta": "Qual é a principal limitação da recursão em linguagens sem otimização de cauda?",
+    "alternativas": [
+      "Memória insuficiente",
+      "Baixo desempenho",
+      "Stack overflow",
+      "Difícil depuração"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Recursão – Limitações"
+  },
+  {
+    "pergunta": "Qual é a complexidade do algoritmo de Karatsuba para multiplicação de números grandes?",
+    "alternativas": ["O(n^2)", "O(n^(log2 3))", "O(n log n)", "O(n)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Multiplicação de Números"
+  },
+  {
+    "pergunta": "Em problemas de otimização, qual é a principal característica dos algoritmos de aproximação?",
+    "alternativas": [
+      "Garantem a solução ótima",
+      "São exatos",
+      "Fornecem soluções próximas ao ótimo em tempo polinomial",
+      "Utilizam recursão intensiva"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Algoritmos – Aproximação"
+  },
+  {
+    "pergunta": "Qual é o problema clássico resolvido pelo algoritmo de Euclides?",
+    "alternativas": [
+      "Cálculo do MMC",
+      "Cálculo do MDC",
+      "Resolução de equações lineares",
+      "Multiplicação de matrizes"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Matemática Computacional – Algoritmo de Euclides"
+  },
+  {
+    "pergunta": "Qual é a vantagem de usar uma estrutura de dados Trie?",
+    "alternativas": [
+      "Busca rápida por prefixo",
+      "Armazenamento compacto de números",
+      "Operações aritméticas eficientes",
+      "Melhor desempenho em ordenação"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "1",
+    "competencia": "Estruturas de Dados – Trie"
+  },
+  {
+    "pergunta": "Qual é a complexidade da busca em uma Trie?",
+    "alternativas": ["O(n)", "O(m)", "O(1)", "O(log n)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Estruturas de Dados – Trie"
+  },
+  {
+    "pergunta": "Qual algoritmo é utilizado para encontrar componentes fortemente conexos em um grafo?",
+    "alternativas": ["Algoritmo de Kosaraju", "Algoritmo de Prim", "Busca em profundidade", "Algoritmo de Dijkstra"],
+    "dificuldade": "Difícil",
+    "resposta": "1",
+    "competencia": "Teoria dos Grafos – Componentes Fortemente Conexos"
+  },
+  {
+    "pergunta": "Qual é o conceito central na técnica de 'divide and conquer'?",
+    "alternativas": [
+      "Resolver o problema inteiro de uma vez",
+      "Dividir o problema em subproblemas menores, resolvê-los e combinar os resultados",
+      "Utilizar recursão sem base de parada",
+      "Iterar sobre os elementos"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Algoritmos – Divisão e Conquista"
+  },
+  {
+    "pergunta": "Qual é o tempo de execução do algoritmo de ordenação por contagem (Counting Sort)?",
+    "alternativas": ["O(n)", "O(n+k)", "O(n log n)", "O(n^2)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Ordenação"
+  },
+  {
+    "pergunta": "Qual é a característica do algoritmo de ordenação Radix Sort?",
+    "alternativas": [
+      "Baseia-se em comparação direta",
+      "Ordena dígito a dígito",
+      "Utiliza recursão para dividir o vetor",
+      "É um algoritmo de ordenação in-place"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Ordenação"
+  },
+  {
+    "pergunta": "Em algoritmos recursivos, o que é o 'caso base'?",
+    "alternativas": [
+      "A condição que termina a recursão",
+      "A parte recursiva do algoritmo",
+      "A condição que causa a chamada recursiva",
+      "A inicialização da função"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "1",
+    "competencia": "Recursão – Conceitos Básicos"
+  },
+  {
+    "pergunta": "Qual é a complexidade do algoritmo de Strassen para multiplicação de matrizes?",
+    "alternativas": ["O(n^3)", "O(n^(log2 7))", "O(n^2)", "O(n log n)"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Análise de Algoritmos – Multiplicação de Matrizes"
+  },
+  {
+    "pergunta": "Qual é a principal aplicação do algoritmo de busca A*?",
+    "alternativas": [
+      "Ordenação de dados",
+      "Caminho mínimo em mapas com heurísticas",
+      "Cálculo de primos",
+      "Multiplicação de grandes números"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – Algoritmo A*"
+  },
+  {
+    "pergunta": "Qual estrutura de dados é utilizada para implementar o algoritmo de busca em profundidade (DFS) de forma iterativa?",
+    "alternativas": ["Fila", "Pilha", "Dicionário", "Conjunto"],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Teoria dos Grafos – DFS"
+  },
+  {
+    "pergunta": "Em problemas de otimização, qual é a estratégia principal dos algoritmos gulosos?",
+    "alternativas": [
+      "Considerar todas as possibilidades",
+      "Escolher a melhor opção localmente em cada etapa",
+      "Dividir o problema em subproblemas independentes",
+      "Utilizar recursão profunda"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Algoritmos – Estratégia Gulosa"
+  },
+  {
+    "pergunta": "Qual é a complexidade do algoritmo de ordenação ShellSort na média?",
+    "alternativas": ["O(n)", "O(n log n)", "Entre O(n) e O(n^2)", "O(n^2)"],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Análise de Algoritmos – Ordenação"
+  },
+  {
+    "pergunta": "Em problemas envolvendo árvores, qual é a técnica usada para percorrer todos os nós em pré-ordem?",
+    "alternativas": ["In-ordem", "Pós-ordem", "Pré-ordem", "Nível a nível"],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Estruturas de Dados – Árvores"
+  },
+  {
+    "pergunta": "Qual é a principal diferença entre uma árvore binária de busca e uma árvore binária completa?",
+    "alternativas": [
+      "Ordem dos nós",
+      "Balanceamento dos nós",
+      "Número de nós por nível",
+      "Tipo de dados armazenados"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "3",
+    "competencia": "Estruturas de Dados – Árvores"
+  },
+  {
+    "pergunta": "Qual é o método utilizado para encontrar a solução de equações diferenciais parciais utilizando a técnica de diferenças finitas?",
+    "alternativas": [
+      "Método de Newton",
+      "Método de Gauss-Seidel",
+      "Transformada de Fourier",
+      "Método dos Elementos Finitos"
+    ],
+    "dificuldade": "Difícil",
+    "resposta": "2",
+    "competencia": "Matemática Computacional – Equações Diferenciais"
   }
 ]

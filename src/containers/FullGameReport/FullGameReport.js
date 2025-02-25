@@ -29,10 +29,15 @@ export const FullGameReport = ({ setCurrentScreen }) => {
   const [blink, setBlink] = useState(false);
 
   const dividePerguntas = (bancoPerguntas) => {
-    const perguntas = [...bancoPerguntas];
-    setPerguntasFaceis(perguntas.splice(0, 60));
-    setPerguntasMedias(perguntas.splice(0, 40));
-    setPerguntasDificeis(perguntas.splice(0, 20));
+    setPerguntasFaceis(
+      bancoPerguntas.filter((pergunta) => pergunta.dificuldade === "Fácil")
+    );
+    setPerguntasMedias(
+      bancoPerguntas.filter((pergunta) => pergunta.dificuldade === "Média")
+    );
+    setPerguntasDificeis(
+      bancoPerguntas.filter((pergunta) => pergunta.dificuldade === "Difícil")
+    );
   };
 
   const getPerguntaAleatoria = (nivelAtual) => {
