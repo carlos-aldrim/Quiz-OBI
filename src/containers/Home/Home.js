@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import "./Home.css";
 import logo from "../../assets/logo.png";
 
-export const Home = ({ setGameStarted }) => {
+export const Home = ({ setCurrentScreen }) => {
   const [recorde, setRecorde] = useState(0);
 
   useEffect(() => {
@@ -23,8 +23,7 @@ export const Home = ({ setGameStarted }) => {
           style={{ minHeight: "100vh" }}>
           <Col xs={12} md={8} lg={6}>
             <div className='record'>
-              {recorde}%
-              <span className='record-label'>Recorde</span>{" "}
+              {recorde}%<span className='record-label'>Recorde</span>
             </div>
             <div className='home-box text-center'>
               <img
@@ -39,19 +38,23 @@ export const Home = ({ setGameStarted }) => {
               <p className='description'>
                 Este projeto foi desenvolvido para ajudá-lo a testar seus
                 conhecimentos e aprimorar suas habilidades em lógica de
-                programação. A Olimpíada Brasileira de Informática é uma
-                excelente oportunidade para aprender e se destacar no mundo da
-                computação!
+                programação.
               </p>
               <p className='instructions'>
-                Ao iniciar, você responderá perguntas de diferentes níveis de
-                dificuldade, podendo avaliar seu desempenho e identificar áreas
-                para aprimoramento. Prepare-se e aproveite essa experiência!
+                Escolha entre iniciar o questionário ou visualizar o relatório
+                completo dos jogos anteriores.
               </p>
+
               <button
-                onClick={() => setGameStarted(true)}
+                onClick={() => setCurrentScreen("game")}
                 className='btn btn-start mt-3'>
-                Começar
+                Iniciar Questionário
+              </button>
+
+              <button
+                onClick={() => setCurrentScreen("fullReport")}
+                className='btn btn-report mt-3'>
+                Ver Relatório Completo
               </button>
             </div>
           </Col>

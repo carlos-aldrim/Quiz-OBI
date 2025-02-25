@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
-import { Home } from './containers/Home/Home';
-import { Game } from './containers/Game/Game';
-import './App.css';
+import React, { useState } from "react";
+import { Home } from "./containers/Home/Home";
+import { Game } from "./containers/Game/Game";
+import { FullGameReport } from "./containers/FullGameReport/FullGameReport";
+import "./App.css";
 
 export const App = () => {
-  const [gameStarted, setGameStarted] = useState(false);
+  const [currentScreen, setCurrentScreen] = useState("home");
 
-  return gameStarted ? (
-    <Game setGameStarted={setGameStarted} />
-  ) : (
-    <Home setGameStarted={setGameStarted} />
+  return (
+    <div>
+      {currentScreen === "home" && <Home setCurrentScreen={setCurrentScreen} />}
+      {currentScreen === "game" && <Game setCurrentScreen={setCurrentScreen} />}
+      {currentScreen === "fullReport" && <FullGameReport setCurrentScreen={setCurrentScreen} />}
+    </div>
   );
 };

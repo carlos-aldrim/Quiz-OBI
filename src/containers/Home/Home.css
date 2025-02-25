@@ -45,7 +45,18 @@ section.home.background::before {
   text-align: justify;
 }
 
-.btn.btn-start {
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.btn-start,
+.btn.btn-report {
   border-radius: 50px;
   font-size: 1rem;
   padding: 0.75rem 2rem;
@@ -59,6 +70,10 @@ section.home.background::before {
 .btn-start:hover {
   background-color: #e0a84c;
   transform: scale(1.05);
+}
+
+.btn:hover {
+  opacity: 0.8;
 }
 
 .record {

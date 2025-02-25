@@ -1,44 +1,35 @@
 import React, { useState, useEffect, Fragment } from "react";
 import classnames from "classnames";
 import confetti from "canvas-confetti";
-
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-
-import { bancoPerguntas } from "../../data/perguntas";
-import { recompensaPorNivel } from "../../data/recompensas";
 import "./Game.css";
 import logo from "../../assets/logo.png";
 import { UnclosableModal } from "../../components/UnclosableModal";
 
-export const Game = ({ setGameStarted }) => {
+export const Game = ({ setCurrentScreen }) => {
   const [perguntasFaceis, setPerguntasFaceis] = useState(null);
   const [perguntasMedias, setPerguntasMedias] = useState(null);
   const [perguntasDificeis, setPerguntasDificeis] = useState(null);
-
   const [currentPergunta, setCurrentPergunta] = useState(null);
   const [currentNivel, setCurrentNivel] = useState(0);
-
   const [timerInicio, setTimerInicio] = useState(null);
   const [counterInicio, setCounterInicio] = useState(3);
-
   const [timerPergunta, setTimerPergunta] = useState(null);
   const [counterPergunta, setCounterPergunta] = useState(30);
-
   const [showModal, setShowModal] = useState(false);
-
   const [gameOver, setGameOver] = useState(false);
   const [gameWon, setGameWon] = useState(false);
-
-  const [respostaCerta, setRespostaCerta] = useState(false);
-
   const [pularDisponiveis, setPularDisponiveis] = useState(3);
-
   const [recorde, setRecorde] = useState(0);
+  const [recompensas, setRecompensas] = useState([]);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  const [blink, setBlink] = useState(false);
 
-  const dividePerguntas = () => {
+  const dividePerguntas = (bancoPerguntas) => {
     const perguntas = [...bancoPerguntas];
     setPerguntasFaceis(perguntas.splice(0, 60));
     setPerguntasMedias(perguntas.splice(0, 40));
@@ -77,13 +68,43 @@ export const Game = ({ setGameStarted }) => {
   };
 
   useEffect(() => {
-    dividePerguntas();
-    setCurrentNivel(1);
-    setTimerInicio(
-      setInterval(() => {
-        setCounterInicio((c) => c - 1);
-      }, 1000)
-    );
+    fetch("/data/perguntas.txt")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Falha ao buscar o arquivo de perguntas");
+        }
+        return response.text();
+      })
+      .then((text) => {
+        const bancoPerguntas = JSON.parse(text);
+        dividePerguntas(bancoPerguntas);
+        setCurrentNivel(0);
+        setTimerInicio(
+          setInterval(() => {
+            setCounterInicio((c) => c - 1);
+          }, 1000)
+        );
+      })
+      .catch((error) =>
+        console.error("Erro ao carregar as perguntas do arquivo:", error)
+      );
+  }, []);
+
+  useEffect(() => {
+    fetch("/data/recompensas.txt")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Falha ao buscar o arquivo de recompensas");
+        }
+        return response.text();
+      })
+      .then((text) => {
+        const arrayRecompensas = JSON.parse(text);
+        setRecompensas(arrayRecompensas);
+      })
+      .catch((error) => {
+        console.error("Erro ao carregar recompensas:", error);
+      });
   }, []);
 
   useEffect(() => {
@@ -109,8 +130,8 @@ export const Game = ({ setGameStarted }) => {
   }, []);
 
   const passaNivel = () => {
-    if (currentNivel === 15) {
-      setCurrentNivel(16);
+    if (currentNivel === 14) {
+      setCurrentNivel(14);
       setShowModal(true);
       setGameWon(true);
       confetti({ particleCount: 200 });
@@ -119,23 +140,29 @@ export const Game = ({ setGameStarted }) => {
       getPerguntaAleatoria(currentNivel + 1);
       iniciaTimerPergunta();
     }
+    // Limpa a resposta selecionada após passar de nível
+    setSelectedAnswer(null);
+    setIsAnswerCorrect(null);
   };
 
   const responderPergunta = (resposta) => {
     clearInterval(timerPergunta);
-    if (currentPergunta.resposta === resposta.toString()) {
-      const highlightInterval = setInterval(() => {
-        setRespostaCerta((prev) => !prev);
-      }, 80);
-      setTimeout(() => {
-        clearInterval(highlightInterval);
-        setRespostaCerta(false);
+    setSelectedAnswer(resposta);
+    const correct = currentPergunta.resposta === resposta.toString();
+    setIsAnswerCorrect(correct);
+    const highlightInterval = setInterval(() => {
+      setBlink((prev) => !prev);
+    }, 80);
+    setTimeout(() => {
+      clearInterval(highlightInterval);
+      setBlink(false);
+      if (correct) {
         passaNivel();
-      }, 1500);
-    } else {
-      setGameOver(true);
-      setShowModal(true);
-    }
+      } else {
+        setGameOver(true);
+        setShowModal(true);
+      }
+    }, 1500);
   };
 
   const pularPergunta = () => {
@@ -147,15 +174,14 @@ export const Game = ({ setGameStarted }) => {
   };
 
   const finalizarJogo = () => {
-    const progressoAtual = gameWon ? 100 : (recompensaPorNivel[currentNivel] || 0);
-    
+    const progressoAtual = gameWon ? 100 : recompensas[currentNivel] || 0;
+
     if (progressoAtual > recorde) {
       localStorage.setItem("recordeQuiz", progressoAtual.toString());
       setRecorde(progressoAtual);
     }
-    
-    setGameStarted(false);
-  };  
+    setCurrentScreen("home");
+  };
 
   return (
     <section className='game background'>
@@ -170,19 +196,16 @@ export const Game = ({ setGameStarted }) => {
             : ""
         }
         show={showModal}
-        setShow={setShowModal}>
+        setShow={setShowModal}
+      >
         <p>
           {counterPergunta === 0 &&
             `Infelizmente, o tempo acabou. A resposta correta era "${
-              currentPergunta.alternativas[
-                parseInt(currentPergunta.resposta) - 1
-              ]
+              currentPergunta.alternativas[parseInt(currentPergunta.resposta) - 1]
             }".`}
           {gameOver &&
             `Resposta incorreta. A resposta correta era "${
-              currentPergunta.alternativas[
-                parseInt(currentPergunta.resposta) - 1
-              ]
+              currentPergunta.alternativas[parseInt(currentPergunta.resposta) - 1]
             }".`}
           {gameWon && (
             <Fragment>
@@ -193,20 +216,16 @@ export const Game = ({ setGameStarted }) => {
         {(counterPergunta === 0 || gameOver) && (
           <p>
             Você completou{" "}
-            <strong>
-              {currentNivel === 1
-                ? "0%"
-                : `${recompensaPorNivel[currentNivel].toString()}%`}
-            </strong>{" "}
-            do quiz. Refaça o teste para aprimorar seu desempenho. Recomendamos
-            que você estude o tópico "{currentPergunta.competencia}" para se
-            preparar melhor.
+            <strong>{`${recompensas[currentNivel].toString()}%`}</strong> do
+            quiz. Refaça o teste para aprimorar seu desempenho. Recomendamos que
+            você estude o tópico "{currentPergunta.competencia}" para se preparar
+            melhor.
           </p>
         )}
 
         <div className='text-center mt-5'>
           <Button className='btn btn-primary' onClick={finalizarJogo}>
-            Reiniciar Jogo
+            Voltar
           </Button>
         </div>
       </UnclosableModal>
@@ -223,7 +242,7 @@ export const Game = ({ setGameStarted }) => {
               />
               {counterInicio === 0 && (
                 <div className='contador-perguntas'>
-                  <p className='text-light'>Pergunta Nº {currentNivel}</p>
+                  <p className='text-light'>Pergunta Nº {currentNivel + 1}</p>
                 </div>
               )}
               <div className='pergunta'>
@@ -239,14 +258,20 @@ export const Game = ({ setGameStarted }) => {
                   <div className='alternativas text-center'>
                     {currentPergunta.alternativas.map((alternativa, i) => (
                       <div
-                        onClick={() => {
-                          responderPergunta(i + 1);
-                        }}
+                        onClick={() => responderPergunta(i + 1)}
                         className={classnames("alternativa", {
-                          certa: i + 1 === parseInt(currentPergunta.resposta),
-                          highlight: respostaCerta,
+                          highlight: blink && selectedAnswer === i + 1,
+                          certa:
+                            blink &&
+                            selectedAnswer === i + 1 &&
+                            isAnswerCorrect,
+                          errada:
+                            blink &&
+                            selectedAnswer === i + 1 &&
+                            !isAnswerCorrect,
                         })}
-                        key={i}>
+                        key={i}
+                      >
                         <span className='numero-alternativa'>{i + 1}</span>
                         {alternativa}
                       </div>
@@ -269,20 +294,21 @@ export const Game = ({ setGameStarted }) => {
                     <Col xs='auto' className='mx-auto'>
                       <div className='text-center projecoes'>
                         <div className='valor'>
-                          {recompensaPorNivel[currentNivel].toString() + "%"}
+                          {recompensas[currentNivel].toString() + "%"}
                         </div>
                         <p
                           className='opcao'
                           onClick={() => {
                             if (
                               window.confirm(
-                                `Tem certeza de que deseja encerrar o jogo?\nVocê já completou ${recompensaPorNivel[
+                                `Tem certeza de que deseja encerrar o jogo?\nVocê já completou ${recompensas[
                                   currentNivel
                                 ].toString()}% do quiz.`
                               )
                             )
-                              setGameStarted(false);
-                          }}>
+                              setCurrentScreen("home");
+                          }}
+                        >
                           Encerrar Jogo
                         </p>
                       </div>
