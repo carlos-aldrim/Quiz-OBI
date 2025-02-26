@@ -5,9 +5,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import { jsPDF } from "jspdf";
 import "./FullGameReport.css";
 import logo from "../../assets/logo.png";
 import { UnclosableModal } from "../../components/UnclosableModal";
+import { GeneratePDFReport } from "../../components/GeneratePDFReport";
 
 export const FullGameReport = ({ setCurrentScreen }) => {
   const totalQuestions = 15;
@@ -20,7 +22,6 @@ export const FullGameReport = ({ setCurrentScreen }) => {
   const [counterInicio, setCounterInicio] = useState(3);
   const [timerPergunta, setTimerPergunta] = useState(null);
   const [counterPergunta, setCounterPergunta] = useState(30);
-  const [respostaCerta, setRespostaCerta] = useState(false);
   const [pularDisponiveis, setPularDisponiveis] = useState(3);
   const [results, setResults] = useState([]);
   const [quizFinished, setQuizFinished] = useState(false);
@@ -177,6 +178,62 @@ export const FullGameReport = ({ setCurrentScreen }) => {
     ),
   ];
 
+  const generatePDFReport = () => {
+    const doc = new jsPDF("p", "pt", "a4");
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+  
+    // Fundo geral do PDF (um tom de cinza claro, por exemplo)
+    doc.setFillColor(245, 245, 245);
+    doc.rect(0, 0, pageWidth, pageHeight, "F");
+  
+    // Cabeçalho com cor de fundo personalizada
+    doc.setFillColor(60, 141, 188); // Tom de azul
+    doc.rect(0, 0, pageWidth, 60, "F");
+  
+    // Adiciona a logo no canto superior esquerdo (ajuste x, y, width e height conforme necessário)
+    // Se a imagem não estiver em base64, pode ser necessário convertê-la previamente.
+    doc.addImage(logo, "PNG", 20, 10, 40, 40);
+  
+    // Título centralizado no cabeçalho
+    doc.setFontSize(22);
+    doc.setTextColor(255, 255, 255);
+    doc.text("Relatório Final de Estudo", pageWidth / 2, 35, { align: "center" });
+  
+    // Corpo do relatório
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(14);
+    let yPosition = 90; // Ponto de partida abaixo do cabeçalho
+  
+    // Exibe as informações do quiz
+    doc.text(`Você concluiu o quiz.`, 40, yPosition);
+    yPosition += 25;
+    doc.text(
+      `Acertos: ${correctCount} de ${totalQuestions} (${percentage}%)`,
+      40,
+      yPosition
+    );
+    yPosition += 35;
+  
+    if (topicsToStudy.length > 0) {
+      doc.text("Recomendamos revisar os seguintes tópicos:", 40, yPosition);
+      yPosition += 25;
+      topicsToStudy.forEach((topic, index) => {
+        doc.text(`${index + 1}. ${topic}`, 60, yPosition);
+        yPosition += 20;
+      });
+    } else {
+      doc.text("Parabéns! Você acertou todas as questões!", 40, yPosition);
+    }
+  
+    // Elementos gráficos adicionais, como linhas ou retângulos, podem ser adicionados:
+    doc.setDrawColor(60, 141, 188);
+    doc.setLineWidth(2);
+    doc.line(40, yPosition + 10, pageWidth - 40, yPosition + 10);
+  
+    doc.save("relatorio_estudo.pdf");
+  };
+
   return (
     <section className='game background'>
       {quizFinished && (
@@ -198,9 +255,17 @@ export const FullGameReport = ({ setCurrentScreen }) => {
             <p>Parabéns! Você acertou todas as questões!</p>
           )}
           <div className='text-center mt-5'>
-            <Button className='btn btn-primary' onClick={finalizarJogo}>
+            <Button className='btn btn-primary mr-2' onClick={finalizarJogo}>
               Voltar
             </Button>
+            {topicsToStudy.length > 0 && (
+              <Button
+              className='btn btn-secondary mt-2'
+              onClick={() => GeneratePDFReport(correctCount, totalQuestions, percentage, topicsToStudy)}
+            >
+              Gerar PDF
+            </Button>
+            )}
           </div>
         </UnclosableModal>
       )}
